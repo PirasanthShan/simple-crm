@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { MatToolbar, MatToolbarRow } from '@angular/material/toolbar';   
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatSidenavModule, MatDrawer } from '@angular/material/sidenav';
 import { MatIcon } from '@angular/material/icon'; 
 
 @Component({
@@ -13,7 +13,8 @@ import { MatIcon } from '@angular/material/icon';
             MatToolbar, 
             MatToolbarRow, 
             MatSidenavModule,
-            MatIcon
+            MatIcon,
+            MatDrawer
            ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'] 
