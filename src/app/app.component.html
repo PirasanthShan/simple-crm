@@ -4,8 +4,12 @@
       Platz für LOGO
     </div>
     <ul class="menu-item">
-      <li><mat-icon>dashboard</mat-icon>Dashboard</li>
-      <li><mat-icon>account_circle</mat-icon>User</li>
+      <li [routerLink]="'/'" routerLinkActive="router-liknk-active">
+        <mat-icon>dashboard</mat-icon>Dashboard
+      </li>
+      <li [routerLink]="'/user'" >
+        <mat-icon>account_circle</mat-icon>User
+      </li>
     </ul>
   </mat-drawer>
 
@@ -16,6 +20,11 @@
         <span>Simple CRM</span>
         </mat-toolbar-row>
     </mat-toolbar>
+
+    <div class="router-container">
+      <router-outlet></router-outlet>
+    </div>
+  
   </div>
 
 </mat-drawer-container>
