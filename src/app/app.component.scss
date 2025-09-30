@@ -45,6 +45,10 @@ mat-toolbar, mat-toolbar-row{
     &:hover{
       background-color: rgb(204, 202, 202);
     }
+
+    &:focus {
+       outline: none;
+    }
   }
 }
 

@@ -4,6 +4,10 @@ import { RouterOutlet, RouterLinkActive, RouterModule, RouterLink } from '@angul
 import { MatToolbar, MatToolbarRow } from '@angular/material/toolbar';   
 import { MatSidenavModule, MatDrawer } from '@angular/material/sidenav';
 import { MatIcon } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatIconModule } from '@angular/material/icon'
+
 
 
 
@@ -19,7 +23,10 @@ import { MatIcon } from '@angular/material/icon';
     MatDrawer, 
     RouterLinkActive,
     RouterModule,
-    RouterLink],
+    RouterLink,
+    MatButtonModule,
+    MatTooltipModule,
+    MatIconModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'] 
 })
