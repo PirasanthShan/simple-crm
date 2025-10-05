@@ -1,32 +1,12 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
-import {
-  MatDialogActions,
-  MatDialogClose,
-  MatDialogContent,
-  MatDialogTitle,
-} from '@angular/material/dialog';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-
-
+import { MATERIAL_IMPORTS } from '../material.imports';
 
 @Component({
   selector: 'app-dialog-add-user',
   standalone: true,
-  imports: [FormsModule,
-            MatButtonModule,
-            MatDialogActions,
-            MatDialogContent,
-            MatDialogTitle,
-            MatFormFieldModule,
-            MatInputModule
-           ],
+  imports: [FormsModule,MATERIAL_IMPORTS],
   templateUrl: './dialog-add-user.component.html',
-  styleUrl: './dialog-add-user.component.scss'
+  styleUrls: ['./dialog-add-user.component.scss']
 })
-
-export class DialogAddUserComponent {
-
-}
+export class DialogAddUserComponent {}

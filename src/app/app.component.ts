@@ -1,38 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet, RouterLinkActive, RouterModule, RouterLink } from '@angular/router';
-
-import { MatToolbar, MatToolbarRow } from '@angular/material/toolbar';   
-import { MatSidenavModule, MatDrawer } from '@angular/material/sidenav';
-import { MatIcon } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { MatTooltipModule } from '@angular/material/tooltip';
-import { MatIconModule } from '@angular/material/icon'
-import { MatDialogModule } from '@angular/material/dialog';
-
-
-
+import { RouterModule, RouterOutlet } from '@angular/router';
+import { MATERIAL_IMPORTS } from './material.imports';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule,
-    RouterOutlet,
-    MatToolbar,
-    MatToolbarRow,
-    MatSidenavModule,
-    MatIcon,
-    MatDrawer, 
-    RouterLinkActive,
-    RouterModule,
-    RouterLink,
-    MatButtonModule,
-    MatTooltipModule,
-    MatIconModule,
-    MatDialogModule],
+  imports: [CommonModule, RouterModule, RouterOutlet,MATERIAL_IMPORTS],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'] 
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'simple-crm';
-}
+export class AppComponent {}
