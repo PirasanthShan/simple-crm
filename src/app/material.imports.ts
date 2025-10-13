@@ -9,6 +9,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { CommonModule } from '@angular/common';
 
 export const MATERIAL_IMPORTS = [
   MatButtonModule,
@@ -22,5 +24,7 @@ export const MATERIAL_IMPORTS = [
   MatCardModule,
   MatDatepickerModule,
   MatNativeDateModule,
-  
+  MatProgressBarModule,
+  CommonModule
+
 ];

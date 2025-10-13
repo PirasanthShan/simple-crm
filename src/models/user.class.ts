@@ -1,17 +1,24 @@
 export class User {
-  firstName: string;
-  lastName: string;
-  birthDate: number | null = null;
-  street: string;
-  zipCode: number;
-  city: string;
+  firstName = '';
+  lastName = '';
+  birthDate: number | null = null; // unix ms or null
+  street = '';
+  zipCode: number | null = null;
+  city = '';
 
-  constructor(obj?: any){
-    this.firstName = obj ? obj.firstName : '' ;
-    this.lastName = obj ? obj.lastName : '' ;
-    this.birthDate = obj ? obj.birthDate : '' ;
-    this.street = obj ? obj.street : '' ;
-    this.zipCode= obj ? obj.zipCode : '' ;
-    this.city= obj ? obj.city : '' ;
+  constructor(obj?: Partial<User>) {
+    if (obj) Object.assign(this, obj);
+  }
+
+  // Serialize only plain data for Firestore
+  toJson() {
+    return {
+      firstName: this.firstName,
+      lastName: this.lastName,
+      birthDate: this.birthDate,
+      street: this.street,
+      zipCode: this.zipCode,
+      city: this.city,
+    };
   }
 }
