@@ -4,6 +4,8 @@ import { MATERIAL_IMPORTS } from '../material.imports';
 import { User } from '../../models/user.class';
 import { CommonModule, NgIf } from '@angular/common';
 import { Firestore, collection, addDoc } from '@angular/fire/firestore';
+import { MatDialogRef } from '@angular/material/dialog';
+
 
 
 @Component({
@@ -19,28 +21,29 @@ export class DialogAddUserComponent {
   birthDate: Date | null = null;
   loading = false;
 
-  constructor(private firestore: Firestore) {}
+  constructor(private firestore: Firestore,
+              private dialogRef: MatDialogRef<DialogAddUserComponent>
+  ) {}
 
 
- saveUser() {
+  saveUser() {
   this.loading = true;
-
   setTimeout(async () => {
     try {
       this.user.birthDate = this.birthDate ? this.birthDate.getTime() : null;
       const jsonData = this.user.toJson();
-
-      const userCollection = collection(this.firestore, 'users'); // 🔁 Firestore collection
-      await addDoc(userCollection, jsonData); // 🔥 Daten speichern in Firestore
-
-      console.log('✅ User erfolgreich in Firestore gespeichert:', jsonData);
+      const userCollection = collection(this.firestore, 'users');
+      await addDoc(userCollection, jsonData);
+      console.log('User erfolgreich in Firestore gespeichert:', jsonData);
+      this.dialogRef.close(); 
     } catch (error) {
-      console.error('❌ Fehler beim Speichern in Firestore:', error);
+      console.error('Fehler beim Speichern in Firestore:', error);
     } finally {
       this.loading = false;
     }
-  }, 500); // Kurze Verzögerung, um Ladebalken anzuzeigen
+  }, 500);
 }
+
 
 }
 
