@@ -57,3 +57,10 @@ mat-toolbar, mat-toolbar-row{
   padding-right: 56px;
   padding-top: 16px;
 }
+
+.logo {
+  height: 50px;
+    justify-content: center;
+    width: -webkit-fill-available;
+    object-fit: cover;
+}
