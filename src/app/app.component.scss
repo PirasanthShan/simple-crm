@@ -13,8 +13,6 @@
 
 .logo-container{
   border-bottom:  1px solid rgb(204, 202, 202);
-  padding-left: 16px;
-  padding-right: 16px;
   min-height: 56px;
   display: flex;
   align-items: center;
@@ -59,8 +57,9 @@ mat-toolbar, mat-toolbar-row{
 }
 
 .logo {
-  height: 50px;
+    height: 50px;
     justify-content: center;
     width: -webkit-fill-available;
     object-fit: cover;
+    max-width: 200px;
 }
