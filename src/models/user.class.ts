@@ -1,7 +1,8 @@
 export class User {
   firstName = '';
   lastName = '';
-  birthDate: number | null = null; // unix ms or null
+  email= '';
+  birthDate: number | null = null; 
   street = '';
   zipCode: number | null = null;
   city = '';
@@ -10,11 +11,12 @@ export class User {
     if (obj) Object.assign(this, obj);
   }
 
-  // Serialize only plain data for Firestore
+  
   toJson() {
     return {
       firstName: this.firstName,
       lastName: this.lastName,
+      email: this.email,
       birthDate: this.birthDate,
       street: this.street,
       zipCode: this.zipCode,

@@ -8,7 +8,7 @@
 
     <tr *ngFor="let u of allUsers">
       <td>{{ u?.firstName }} {{ u?.lastName }}</td>
-      <td></td>
+      <td>{{ u?.email || '—' }}</td>
       <td>{{ u?.city || '—' }}</td>
     </tr>
   </table>
