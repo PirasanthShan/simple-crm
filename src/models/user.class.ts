@@ -6,6 +6,7 @@ export class User {
   street = '';
   zipCode: number | null = null;
   city = '';
+  
 
   constructor(obj?: Partial<User>) {
     if (obj) Object.assign(this, obj);

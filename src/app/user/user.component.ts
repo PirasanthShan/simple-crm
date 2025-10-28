@@ -8,13 +8,14 @@ import { User } from '../../models/user.class';
 import { Firestore, collection, collectionData, addDoc } from '@angular/fire/firestore';
 import { Subject, firstValueFrom } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { RouterLink, RouterLinkActive } from "@angular/router";
 
 type UserDoc = User & { id: string };
 
 @Component({
   selector: 'app-user',
   standalone: true,
-  imports: [CommonModule, ...MATERIAL_IMPORTS],
+  imports: [CommonModule, ...MATERIAL_IMPORTS, RouterLink, RouterLinkActive],
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.scss'],
 })
