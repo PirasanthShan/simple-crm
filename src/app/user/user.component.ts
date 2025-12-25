@@ -28,14 +28,21 @@ export class UserComponent implements OnDestroy {
   private destroy$ = new Subject<void>();
 
   ngOnInit(): void {
-    const usersRef = collection(this.firestore, 'users');
-    collectionData(usersRef, { idField: 'id' })
-      .pipe(takeUntil(this.destroy$))
-      .subscribe((users) => {
+  const usersRef = collection(this.firestore, 'users');
+
+  collectionData(usersRef, { idField: 'id' })
+    .pipe(takeUntil(this.destroy$))
+    .subscribe({
+      next: (users) => {
         this.allUsers = users as UserDoc[];
         console.log('Received changes from DB', this.allUsers);
-      });
-  }
+      },
+      error: (err) => {
+        console.error('Firestore read blocked (rules/auth/project/appcheck):', err);
+      },
+    });
+}
+
 
   async openDialog() {
     const ref = this.dialog.open(DialogAddUserComponent);
